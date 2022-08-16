@@ -1,0 +1,105 @@
+
+
+-- Таблица championships_by_clubs
+CREATE TABLE championships_by_clubs (
+id SERIAL PRIMARY KEY,
+year INT2 NOT NULL,
+club_id INT NOT NULL,
+games INT2,
+wings INT2,
+ties INT2,
+losts INT2,
+goals_for INT2,
+goals_against INT2,
+postseason VARCHAR(50)
+);
+
+-- Таблица championships_by_players
+CREATE TABLE championships_by_players (
+id SERIAL PRIMARY KEY,
+year INT2 NOT NULL,
+player_id INT NOT NULL,
+club_id INT NOT NULL,
+games INT2,
+wings INT2,
+goals INT2,
+postseason VARCHAR(50)
+);
+
+-- Таблица club_logos
+CREATE TABLE club_logos (
+id SERIAL PRIMARY KEY,
+club_id INT NOT NULL,
+start_year INT2 NOT NULL,
+end_year INT2,
+logo VARCHAR(120) NOT NULL 
+);
+
+-- Таблица clubs
+CREATE TABLE clubs (
+id SERIAL PRIMARY KEY,
+full_name VARCHAR(120) NOT NULL,
+name VARCHAR(50) NOT NULL,
+short_name VARCHAR(5) NOT NULL
+);
+
+-- Таблица countries
+CREATE TABLE countries (
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL UNIQUE,
+short_name VARCHAR(5) NOT NULL UNIQUE,
+flag VARCHAR(120) NOT NULL,
+logo VARCHAR(120) NOT NULL
+);
+
+-- Таблица league_logos
+CREATE TABLE league_logos (
+id SERIAL PRIMARY KEY,
+league_id INT NOT NULL,
+start_year INT2 NOT NULL,
+end_year INT2,
+logo VARCHAR(120) NOT NULL 
+);
+
+6-- Таблица leagues
+CREATE TABLE leagues (
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL UNIQUE,
+short_name VARCHAR(5) NOT NULL UNIQUE,
+start_year INT2 NOT NULL,
+end_year INT2,
+color VARCHAR(50)
+);
+
+-- Таблица leagues_clubs
+CREATE TABLE leagues_clubs (
+league_id INT NOT NULL,
+club_id INT NOT NULL,
+start_year INT2 NOT NULL,
+end_year INT2,
+PRIMARY KEY (league_id, club_id)
+);
+
+-- Таблица players
+CREATE TABLE players (
+id SERIAL PRIMARY KEY,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+jersey_number INT2 NOT NULL,
+player_position VARCHAR(5) NOT NULL,
+player_order INT2 NOT NULL,
+country_id INT NOT NULL,
+birth_year INT2 NOT NULL,
+height INT2,
+weight INT2,
+draft_club_id INT, 
+start_year INT2 NOT NULL,
+end_year INT2 
+);
+
+-- Таблица seasons
+CREATE TABLE seasons (
+id SERIAL PRIMARY KEY,
+name VARCHAR(20) NOT NULL,
+start_year INT2 NOT NULL 
+);
