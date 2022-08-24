@@ -3,7 +3,7 @@
 -- Таблица team_logos
 CREATE TABLE team_logos (
 id SERIAL PRIMARY KEY,
-team_id_id INT NOT NULL,
+team_id INT NOT NULL,
 start_year INT2 NOT NULL,
 end_year INT2,
 logo VARCHAR(120) NOT NULL 
@@ -12,9 +12,12 @@ logo VARCHAR(120) NOT NULL
 -- Таблица teams
 CREATE TABLE teams (
 id SERIAL PRIMARY KEY,
+nation_id INT NOT NULL,
 full_name VARCHAR(120) NOT NULL,
 name VARCHAR(50) NOT NULL,
-short_name VARCHAR(5) NOT NULL
+short_name VARCHAR(5) NOT NULL,
+start_year INT2 NOT NULL,
+end_year INT2
 );
 
 -- Таблица nations
@@ -39,7 +42,7 @@ logo VARCHAR(120) NOT NULL
 CREATE TABLE leagues (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL UNIQUE,
-short_name VARCHAR(5) NOT NULL UNIQUE,
+short_name VARCHAR(10) NOT NULL UNIQUE,
 start_year INT2 NOT NULL,
 end_year INT2,
 color VARCHAR(50),
@@ -65,6 +68,7 @@ end_year INT2
 
 -- Таблица players_tournaments
 CREATE TABLE players_tournaments (
+id SERIAL PRIMARY KEY,
 teams_tournament_id INT NOT NULL,
 player_id INT NOT NULL,
 games INT2,
@@ -74,9 +78,8 @@ postseason VARCHAR(250)
 
 -- Таблица seasons
 CREATE TABLE seasons (
-id SERIAL PRIMARY KEY,
-name VARCHAR(20) NOT NULL,
-start_year INT2 NOT NULL 
+id INT PRIMARY KEY,
+name VARCHAR(20) NOT NULL
 );
 
 -- Таблица teams_tournaments
