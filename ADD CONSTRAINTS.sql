@@ -4,4 +4,5 @@ ADD CONSTRAINT unique_season_id_league_id UNIQUE(season_id, league_id);
 ALTER TABLE teams_tournaments 
 ADD CONSTRAINT unique_tournament_id_team_id UNIQUE(tournament_id, team_id);
 
-
+ALTER TABLE players_tournaments 
+ADD CONSTRAINT unique_teams_tournament_id_player_id UNIQUE(teams_tournament_id, player_id);
