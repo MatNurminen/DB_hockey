@@ -1,8 +1,8 @@
-ALTER TABLE public.players_tournaments 
+ALTER TABLE players_tournaments 
   ALTER COLUMN postseason TYPE text;
 
-ALTER TABLE public.teams_tournaments 
+ALTER TABLE teams_tournaments 
     ALTER COLUMN postseason TYPE text;
 
-ALTER TABLE public.teams_tournaments 
+ALTER TABLE teams_tournaments 
     ALTER COLUMN postseason DROP DEFAULT;
