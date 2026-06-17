@@ -1,5 +1,4 @@
 
-
 -- Таблица team_logos
 CREATE TABLE team_logos (
 id SERIAL PRIMARY KEY,
@@ -101,4 +100,13 @@ CREATE TABLE tournaments (
 id SERIAL PRIMARY KEY,
 season_id INT NOT NULL,
 league_id INT NOT NULL 
+);
+
+-- Таблица teams_postseason
+CREATE TABLE teams_postseason (
+id SERIAL PRIMARY KEY,
+teams_tournaments_id INT NOT NULL REFERENCES teams_tournaments(id) ON DELETE CASCADE,
+title VARCHAR(50) NOT NULL,
+description VARCHAR(200) NOT NULL,
+UNIQUE (teams_tournaments_id, title)
 );
