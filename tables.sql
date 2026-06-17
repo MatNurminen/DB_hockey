@@ -105,7 +105,7 @@ CREATE TABLE teams_postseason (
 id SERIAL PRIMARY KEY,
 teams_tournaments_id INT NOT NULL REFERENCES teams_tournaments(id) ON DELETE CASCADE,
 title VARCHAR(50) NOT NULL,
-description VARCHAR(200) NOT NULL,
+description VARCHAR(200),
 UNIQUE (teams_tournaments_id, title)
 );
 
@@ -114,6 +114,6 @@ CREATE TABLE players_postseason (
 id SERIAL PRIMARY KEY,
 players_tournaments_id INT NOT NULL REFERENCES players_tournaments(id) ON DELETE CASCADE,
 title VARCHAR(50) NOT NULL,
-description VARCHAR(200) NOT NULL,
+description VARCHAR(200),
 UNIQUE (players_tournaments_id, title)
 );
