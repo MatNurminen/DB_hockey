@@ -71,8 +71,7 @@ id SERIAL PRIMARY KEY,
 teams_tournament_id INT NOT NULL,
 player_id INT NOT NULL,
 games INT2,
-goals INT2,
-postseason VARCHAR(250)
+goals INT2
 );
 
 -- Таблица seasons
@@ -91,8 +90,7 @@ wins INT2,
 ties INT2,
 losts INT2,
 goals_for INT2,
-goals_against INT2,
-postseason VARCHAR(250)
+goals_against INT2
 );
 
 -- Таблица tournaments
