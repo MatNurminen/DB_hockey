@@ -108,3 +108,12 @@ title VARCHAR(50) NOT NULL,
 description VARCHAR(200) NOT NULL,
 UNIQUE (teams_tournaments_id, title)
 );
+
+-- Таблица players_postseason
+CREATE TABLE players_postseason (
+id SERIAL PRIMARY KEY,
+players_tournaments_id INT NOT NULL REFERENCES players_tournaments(id) ON DELETE CASCADE,
+title VARCHAR(50) NOT NULL,
+description VARCHAR(200) NOT NULL,
+UNIQUE (players_tournaments_id, title)
+);
