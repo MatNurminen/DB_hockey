@@ -1,18 +1,18 @@
--- Таблица league_logos
+-- Table league_logos
 ALTER TABLE league_logos
 ADD CONSTRAINT league_logos_league_id_fk
 FOREIGN KEY (league_id)
 REFERENCES leagues (id)
 ON DELETE CASCADE;
 
--- Таблица team_logos
+-- Table team_logos
 ALTER TABLE team_logos
 ADD CONSTRAINT team_logos_team_id_fk
 FOREIGN KEY (team_id)
 REFERENCES teams (id)
 ON DELETE CASCADE;
 
--- Таблица players
+-- Table players
 ALTER TABLE players
 ADD CONSTRAINT players_draft_team_id_fk
 FOREIGN KEY (draft_team_id)
@@ -24,7 +24,7 @@ FOREIGN KEY (nation_id)
 REFERENCES nations (id)
 ON DELETE RESTRICT;
 
--- Таблица tournaments
+-- Table tournaments
 ALTER TABLE tournaments
 ADD CONSTRAINT tournaments_league_id_fk
 FOREIGN KEY (league_id)
@@ -36,14 +36,14 @@ FOREIGN KEY (season_id)
 REFERENCES seasons (id)
 ON DELETE RESTRICT;
 
--- Таблица teams
+-- Table teams
 ALTER TABLE teams
 ADD CONSTRAINT teams_nation_id_fk
 FOREIGN KEY (nation_id)
 REFERENCES nations (id)
 ON DELETE RESTRICT;
 
--- Таблица teams_tournaments
+-- Table teams_tournaments
 ALTER TABLE teams_tournaments
 ADD CONSTRAINT teams_tournaments_tournament_id_fk
 FOREIGN KEY (tournament_id)
@@ -55,7 +55,7 @@ FOREIGN KEY (team_id)
 REFERENCES teams (id)
 ON DELETE RESTRICT;
 
--- Таблица players_tournaments
+-- Table players_tournaments
 ALTER TABLE players_tournaments
 ADD CONSTRAINT players_tournaments_teams_tournament_id_fk
 FOREIGN KEY (teams_tournament_id)
