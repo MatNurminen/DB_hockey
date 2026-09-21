@@ -71,3 +71,12 @@ ADD CONSTRAINT players_tournaments_player_id_fk
 FOREIGN KEY (player_id)
 REFERENCES players (id)
 ON DELETE RESTRICT;
+
+-- Table awards
+ALTER TABLE awards
+ADD CONSTRAINT awards_league_fk
+FOREIGN KEY (league_id)
+REFERENCES leagues(id)
+ON DELETE RESTRICT;
+
+
