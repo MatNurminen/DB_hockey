@@ -100,3 +100,23 @@ id SERIAL PRIMARY KEY,
 season_id INT NOT NULL,
 league_id INT NOT NULL 
 );
+
+-- Table postseason
+CREATE TABLE postseason ( 
+id SERIAL PRIMARY KEY, 
+name VARCHAR(50) NOT NULL 
+);
+
+-- Table awards
+CREATE TABLE awards (
+id SERIAL PRIMARY KEY,
+league_id INT NOT NULL,
+name VARCHAR(50) NOT NULL
+);
+
+-- Table players_tournaments_awards
+CREATE TABLE players_tournaments_awards (
+id SERIAL PRIMARY KEY,
+players_tournament_id INT NOT NULL,
+award_id INT NOT NULL 
+);
