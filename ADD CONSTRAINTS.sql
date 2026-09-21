@@ -6,3 +6,9 @@ ADD CONSTRAINT unique_tournament_id_team_id UNIQUE(tournament_id, team_id);
 
 ALTER TABLE players_tournaments 
 ADD CONSTRAINT unique_teams_tournament_id_player_id UNIQUE(teams_tournament_id, player_id);
+
+ALTER TABLE postseason 
+ADD CONSTRAINT unique_postseason_name UNIQUE(name);
+
+ALTER TABLE awards
+ADD CONSTRAINT unique_league_id_name UNIQUE (league_id, name);
