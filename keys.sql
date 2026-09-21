@@ -54,6 +54,11 @@ ADD CONSTRAINT teams_tournaments_team_id_fk
 FOREIGN KEY (team_id)
 REFERENCES teams (id)
 ON DELETE RESTRICT;
+ALTER TABLE teams_tournaments
+ADD CONSTRAINT teams_tournaments_postseason_fk
+FOREIGN KEY (postseason_id)
+REFERENCES postseason(id)
+ON DELETE RESTRICT;
 
 -- Table players_tournaments
 ALTER TABLE players_tournaments
