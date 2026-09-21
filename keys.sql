@@ -79,4 +79,14 @@ FOREIGN KEY (league_id)
 REFERENCES leagues(id)
 ON DELETE RESTRICT;
 
-
+-- Table players_tournaments_awards
+ALTER TABLE players_tournaments_awards
+ADD CONSTRAINT players_tournaments_awards_player_tournament_fk
+FOREIGN KEY (players_tournament_id)
+REFERENCES players_tournaments(id)
+ON DELETE CASCADE;
+ALTER TABLE players_tournaments_awards
+ADD CONSTRAINT players_tournaments_awards_award_fk
+FOREIGN KEY (award_id)
+REFERENCES awards(id)
+ON DELETE CASCADE;
