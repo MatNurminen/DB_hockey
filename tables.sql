@@ -1,5 +1,5 @@
 
--- Таблица team_logos
+-- Table team_logos
 CREATE TABLE team_logos (
 id SERIAL PRIMARY KEY,
 team_id INT NOT NULL,
@@ -8,7 +8,7 @@ end_year INT2,
 logo VARCHAR(120) NOT NULL 
 );
 
--- Таблица teams
+-- Table teams
 CREATE TABLE teams (
 id SERIAL PRIMARY KEY,
 nation_id INT NOT NULL,
@@ -19,7 +19,7 @@ start_year INT2 NOT NULL,
 end_year INT2
 );
 
--- Таблица nations
+-- Table nations
 CREATE TABLE nations (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL UNIQUE,
@@ -28,7 +28,7 @@ flag VARCHAR(120) NOT NULL,
 logo VARCHAR(120) NOT NULL
 );
 
--- Таблица league_logos
+-- Table league_logos
 CREATE TABLE league_logos (
 id SERIAL PRIMARY KEY,
 league_id INT NOT NULL,
@@ -37,7 +37,7 @@ end_year INT2,
 logo VARCHAR(120) NOT NULL 
 );
 
-6-- Таблица leagues
+-- Table leagues
 CREATE TABLE leagues (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL UNIQUE,
@@ -48,7 +48,7 @@ color VARCHAR(50),
 is_local BOOLEAN DEFAULT false
 );
 
--- Таблица players
+-- Table players
 CREATE TABLE players (
 id SERIAL PRIMARY KEY,
 first_name VARCHAR(50) NOT NULL,
@@ -65,7 +65,7 @@ start_year INT2 NOT NULL,
 end_year INT2 
 );
 
--- Таблица players_tournaments
+-- Table players_tournaments
 CREATE TABLE players_tournaments (
 id SERIAL PRIMARY KEY,
 teams_tournament_id INT NOT NULL,
@@ -74,13 +74,13 @@ games INT2,
 goals INT2
 );
 
--- Таблица seasons
+-- Table seasons
 CREATE TABLE seasons (
 id INT PRIMARY KEY,
 name VARCHAR(20) NOT NULL
 );
 
--- Таблица teams_tournaments
+-- Table teams_tournaments
 CREATE TABLE teams_tournaments (
 id SERIAL PRIMARY KEY,
 tournament_id INT NOT NULL,
@@ -90,10 +90,11 @@ wins INT2,
 ties INT2,
 losts INT2,
 goals_for INT2,
-goals_against INT2
+goals_against INT2,
+postseason_id INT
 );
 
--- Таблица tournaments
+-- Table tournaments
 CREATE TABLE tournaments (
 id SERIAL PRIMARY KEY,
 season_id INT NOT NULL,
